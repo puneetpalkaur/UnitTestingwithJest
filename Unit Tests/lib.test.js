@@ -1,5 +1,6 @@
 const lib = require('./lib');
 
+//test numbers
 describe('absolute',() =>{
     it('Always return positive number if input is positive',() =>{
         let result = lib.absolute(1);
@@ -11,7 +12,7 @@ describe('absolute',() =>{
     });
 });
 
-
+// test string
 describe('greet',() => {
     it('should return greeting function',() =>{
         let result = lib.greet('Welcome Puneet');
@@ -19,6 +20,7 @@ describe('greet',() => {
     });
 });
 
+//test Arrays
 describe('getCurrencies',() => {
     it('should return supporting currencies',() =>{
         let result = lib.getCurrencies();
@@ -29,9 +31,15 @@ describe('getCurrencies',() => {
     });
 });
 
+// test Objects
 describe('getProduct',() => {
     it('should return product with given id ',() =>{
         let result = lib.getProduct(1);
-        expect(result).toEqual({id: 1, price:10})
+        expect(result).toEqual({id: 1, price:10});
+
+        // not exact match, validate only properties interested in
+        expect(result).toMatchObject({id: 1, price:10});
+
+        expect(result).toHaveProperty('id',1);
     });
 });
