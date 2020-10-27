@@ -1,0 +1,14 @@
+{
+  "name": "unit-tests",
+  "version": "1.0.0",
+  "description": "Unit Tests",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Puneetpal Kaur",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^26.6.1"
+  }
+}
