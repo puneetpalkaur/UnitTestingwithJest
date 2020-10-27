@@ -1,6 +1,8 @@
 const lib = require('./lib');
 
-//test numbers
+/**
+ test Numbers
+ * */
 describe('absolute',() =>{
     it('Always return positive number if input is positive',() =>{
         let result = lib.absolute(1);
@@ -12,7 +14,9 @@ describe('absolute',() =>{
     });
 });
 
-// test string
+/**
+ test Strings
+ * */
 describe('greet',() => {
     it('should return greeting function',() =>{
         let result = lib.greet('Welcome Puneet');
@@ -20,7 +24,9 @@ describe('greet',() => {
     });
 });
 
-//test Arrays
+/**
+ test Arrays
+ * */
 describe('getCurrencies',() => {
     it('should return supporting currencies',() =>{
         let result = lib.getCurrencies();
@@ -31,7 +37,9 @@ describe('getCurrencies',() => {
     });
 });
 
-// test Objects
+/**
+ test Objects
+ * */
 describe('getProduct',() => {
     it('should return product with given id ',() =>{
         let result = lib.getProduct(1);
@@ -45,6 +53,21 @@ describe('getProduct',() => {
 });
 
 /**
-test exceptions
+test Exceptions
 */
 
+describe('registerUser',() => {
+    it('should throw error if username is falsy',() =>{
+        // falsy values --> null, undefined, NaN, '', 0, false
+        const args = [null, undefined, NaN, '', 0, false];
+        args.forEach( (val) => {
+            // use callback to invoke the error block
+            expect(() => {lib.registerUser(val)}).toThrow();
+        })
+    });
+    it('should return username object if valid username is passed',() =>{
+        const result = lib.registerUser('Puneet');
+        expect(result).toMatchObject({username: 'Puneet'});
+        expect(result.id).toBeGreaterThan(0);
+    });
+});
