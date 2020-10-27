@@ -43,3 +43,8 @@ describe('getProduct',() => {
         expect(result).toHaveProperty('id',1);
     });
 });
+
+/**
+test exceptions
+*/
+
