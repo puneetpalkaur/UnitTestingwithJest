@@ -13,4 +13,4 @@ module.exports.fizzBuzz = function(input) {
     return 'Buzz'; 
 
   return input; 
-}
+};
