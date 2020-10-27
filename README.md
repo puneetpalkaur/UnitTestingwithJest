@@ -1,4 +1,4 @@
-#Unit Testing with Jest
+##Unit Testing with Jest
 
 - Jest is a delightful JavaScript Testing Framework with a focus on simplicity.
 
@@ -7,7 +7,7 @@
 ##About
 This repo is a guide to write unit test cases with examples using Jest.
 
-## Installation
+##Installation
 
 Use the package manager [npm](https://www.npmjs.com/) to install foobar.
 
