@@ -60,9 +60,14 @@ describe('registerUser',() => {
     it('should throw error if username is falsy',() =>{
         // falsy values --> null, undefined, NaN, '', 0, false
         const args = [null, undefined, NaN, '', 0, false];
-        args.forEach( val => {
+        args.forEach( (val) => {
             // use callback to invoke the error block
             expect(() => {lib.registerUser(val)}).toThrow();
         })
+    });
+    it('should return username object if valid username is passed',() =>{
+        const result = lib.registerUser('Puneet');
+        expect(result).toMatchObject({username: 'Puneet'});
+        expect(result.id).toBeGreaterThan(0);
     });
 });
